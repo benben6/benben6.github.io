@@ -1,46 +1,35 @@
 # Basic
-title: 潘柏信
-subtitle: 个人站
-description: 欢迎来到我的个人站~
+title: benQ
+subtitle: es6 react JavaScript
+description: 一个前端工作者~
 # 头像里面的标题
 avatarTitle: leopardpan
 # 头像里面的描述
-avatarDesc: iOS / 机器学习
-url: "http://baixin.io"
+avatarDesc: 前端 / 不断折腾
+url: "http://bengirl.com/"
 
 # Comment
 comment:
-    # disqus: leopard
-    duoshuo: leopard 
+    #是否开启多说评论
+    duoshuo: bengirl 
 
 # Social
 social:
-    weibo: 5366874726 
-    github: leopardpan
+    #weibo: 5366874726 
+    github: benben6
     # twitter: 
-    mail: leopardpan@icloud.com
+    mail: 240018677@qq.com
 
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
 baidu:
-    id: 8ba1c6be0953b6f9c2ba38e57f615421  
+    #id: 8ba1c6be0953b6f9c2ba38e57f615421  
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
 ga:
-    id: UA-84134159-3   
+    #id: UA-84134159-3   
     host: auto  
-
-
-# 《----------------- 上面的信息修改成你自己的 ---------------------------》
-#
-#
-#  _post/ 下的文章更换成你自己的文章
-#  帮忙star一下，感谢~😆 地址： https://github.com/leopardpan/leopardpan.github.io
-#
-#
-# 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
-
 
 permalink: /:year/:month/:title/
 # Format
