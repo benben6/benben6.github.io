@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d228ca1"],{db4a:function(n,t,e){"use strict";e.r(t);var a=function(){var n=this,t=n.$createElement,e=n._self._c||t;return e("div",[n._v("这里是工作页面")])},c=[],u={data:function(){return{}},methods:{}},r=u,d=e("2877"),o=Object(d["a"])(r,a,c,!1,null,"3d4181b4",null);t["default"]=o.exports}}]);
