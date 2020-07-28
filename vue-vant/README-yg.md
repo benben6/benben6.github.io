@@ -8,7 +8,27 @@
 
 3、ajax框架Axios
 
-ajax封装
+ajax封装与调用demo
+```
+api部分：
+export const getApiFn = () => ajax(url, param, 'GET or POST or..', 是否开启loading效果);
+demo：
+export const getUserInfo = (参数1, 参数1) => ajax(BASE_API + 'userInfo', {aa:参数1,bb:参数1}, 'GET', true);
+使用：
+async myFn () {
+  let userInfo = await getUserInfo(参数1, 参数1);
+  console.log(userInfo)
+}
+或者
+myFn () {
+  getUserInfo(参数1, 参数1).then((response) => {
+        console.log(response)
+      }, (err) => {
+        console.log(err)
+      });
+}
+
+```
 
 4、vue-create-api 
 
@@ -38,7 +58,6 @@ better-scroll: 滚动实现，参考https://github.com/ustbhuangyi/better-scroll
 中文文档：https://better-scroll.github.io/docs/zh-CN/guide/base-scroll-options.html 
 关闭sourcemap防止源码泄露
 
-
 ```
 
 6、参考资料：
@@ -56,10 +75,30 @@ mpvue
 7、平台优化：
 ```
 1、配置多环境变量，可以根据不同的命令自动适配各环境下的变量，例：baseApi
-2、配置 alias 别名，以前引入方式import { setLocalStore, getLocalStore } from '../../../config/global.js',现在引入方式import { setLocalStore, getLocalStore } from '@config/global.js'
+2、配置 alias 别名，
+   以前引入方式import { setLocalStore, getLocalStore } from '../../../config/global.js',
+   现在引入方式import { setLocalStore, getLocalStore } from '@config/global.js'
 3、配置 proxy 跨域,方便本地开发，并且可以配置多个api跨域请求
+   proxy: {
+      // 配置跨域处理 可以设置多个
+      '/api': {
+        target: 'http://xxxx.cn:7300/mock/kk/api/', // 测试
+        // target: 'http://api.xxxx.cn/api/', // 生产
+        ws: true, // 是否启用websockets
+        changeOrigin: true // 开启代理，在本地创建一个虚拟服务端
+      },
+      // eslint-disable-next-line no-dupe-keys
+      '/api': {
+        target: 'http://172.20.112.101:3000/mock/36/api/', // 测试
+        // target: 'http://api.xxxx.cn/api/', // 生产
+        ws: true, // 是否启用websockets
+        changeOrigin: true // 开启代理，在本地创建一个虚拟服务端
+      },
+    }
+
 4、页面缓存判断<keep-alive>组件配合路由route.meta.keepAlive方式可以缓存页面，不用反复进行http请求，以达到一面缓存。
 5、打包配置添加命令，不用每次手动改url在来打包
+   具体看config目录下config/env.xxx.js
 ```
 8、语法及前端规范
 
@@ -292,9 +331,60 @@ import { xxxx } from '../../src/api/xxxx'
 ```
 9、命令
 
+第一次运行
+
 ```
+// 不建议使用cnpm install 安装依赖
+第一次运行安装依赖： npm install
 本地运行：npm run serve
 测试环境打包：npm run stage
 生产打包：npm run build
 eslint检查：npm run lint
+```
+10、项目核心架构结构
+```
+.
+├── public
+│   ├── favicon.ico
+│   ├── mock
+│   └── index.html
+├── src
+│   ├── App.vue
+│   ├── api
+│   ├── assets
+│   │  ├── images
+│   │  └── style
+│   ├── components
+│   ├── config
+│   ├── i18n
+│   ├── icons
+│   ├── main.js
+│   ├── plugins
+│   │   ├── element.js
+│   │   └── vant.js
+│   ├── router
+│   │   └── router.js
+│   ├── store
+│   │   ├── actions.js
+│   │   ├── getters.js
+│   │   ├── mutation-type.js
+│   │   ├── mutations.js
+│   │   ├── state.js
+│   │   └── store.js
+│   │── utils
+│   └── views
+├── .env.development
+├── .env.production
+├── .env.staging
+├── .eslintrc.js
+├── .gitignore
+├── babel.config.js
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── README.md
+├── README.structure.md
+└── vue.config.js
+
 ```
