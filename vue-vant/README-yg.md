@@ -64,7 +64,6 @@ better-scroll: 滚动实现，参考https://github.com/ustbhuangyi/better-scroll
 ```
 vue-music-webapp: 网页音乐app
 地址：http://120.79.162.149:3002/#/singer
-awesome-vue：https://github.com/vuejs/awesome-vue
 vue资源库，地址：https://github.com/vuejs/awesome-vue
 vue-vant-mobile：https://github.com/frontend-qin/vue-vant-mobile
 vue-h5-template:https://github.com/sunniejs/vue-h5-template
@@ -104,7 +103,7 @@ mpvue
 
 语法主要以vscode的各种插件配合检查，包括eslint、Vetur、Vetur、JavaScript (ES6) code snippets等语法检查，错误提示，修改正确语法才能进行编程，不用人工干预，还有内置了命令：npm run lint 提交代码前检查一下语法问题，没有语法在提交到svn上
 ```
-// vscode 前端插件 自动补全，语法提示灯
+// vscode 前端插件 自动补全，语法提示等
 Atom Keymap、Atom Keymap、Auto Rename Tag、Element UI Snippets、
 ESLint、JavaScript (ES6) code snippets、Auto Close Tag、
 Path Intellisense、Prettier - Code formatter
@@ -211,6 +210,8 @@ this.$emit（'my-event'）
 
 ```
 3、js 常见规范
+由于vue有webpack自动打包，可以尽量不写分号";"，已到达到代码干净美观.
+js部分尽量用es6、es7语法已到达精简，使用es6的时候，主要语法糖的支持程度，不熟悉的es6、es7的需要查看相应手册，避免盲目使用。
 
 3.1 js 导入导出：
 
